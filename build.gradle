@@ -6,7 +6,6 @@ jar  {
   manifest {
      attributes     'Main-Class' : 'AntLabMain',
                     'Class-Path' : './lib/resources'
-
     }
 }
 
