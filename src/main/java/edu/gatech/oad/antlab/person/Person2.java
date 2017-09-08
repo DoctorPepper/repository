@@ -1,14 +1,18 @@
 package edu.gatech.oad.antlab.person;
+import java.util.Collections;
+import java.util.ArrayList;
 
 /**
  *  A simple class for person 2
  *  returns their name and a
- *  modified string 
+ *  modified string
  *
- * @author Bob
+ * @author Madison McRoy
  * @version 1.1
  */
 public class Person2 {
+
+
     /** Holds the persons real name */
     private String name;
 	 	/**
@@ -24,21 +28,30 @@ public class Person2 {
 	 * input and return its characters in
 	 * random order.
 	 * given "gtg123b" it should return
-	 * something like "g3tb1g2".
+	 * something like "g3tb1g2".s
 	 *
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+	private static String calc(String input) {
+        char[] characters = input.toCharArray();
+        ArrayList al = new ArrayList();
+        for (int i = 0; i <input.length(); i++) {
+            al.add(characters[i]);
+        }
+        Collections.shuffle(al);
+        for (int i = 0; i < input.length(); i++) {
+            characters[i] = (char) al.get(i);
+        }
+        String result = new String(characters);
+        return result;
 	}
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
-	 * @return the string representing the 
+	 * @return the string representing the
 	 *         object
 	 */
 	public String toString(String input) {
